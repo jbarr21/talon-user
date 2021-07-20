@@ -1,4 +1,10 @@
 #provide both anchored and unachored commands via 'over'
+dictate [<user.text>] over$:
+    insert(text)
+dictate [<user.text>]$:
+    insert(text)
+    mode.disable("command")
+    mode.enable("dictation")
 phrase <user.text>$:
     user.add_phrase_to_history(text)
     insert(text)

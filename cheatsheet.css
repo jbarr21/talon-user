@@ -1,0 +1,48 @@
+body {
+  column-count: 3;
+  background-color: #333438;
+  color: white;
+}
+
+ul {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+pre{
+  overflow: hidden
+}
+
+p { 
+  display: flex;
+  margin: 0 0 0 0;
+  color: white;
+  border: solid black;
+}
+
+blockquote{
+  padding: 0 0 0 0;
+  margin: unset
+}
+
+p > * {
+  flex: 1;
+  /*! margin: 0 0 0 0; */
+  align-content: ;
+}
+
+li {
+  list-style:none  
+}
+
+li > p {
+  border: none;
+  overflow: hidden;
+  display: block    
+} 
+
+p:nth-child(2n){
+  background-color: #292B2D;
+}
+
+

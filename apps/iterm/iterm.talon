@@ -9,3 +9,11 @@ tag(): user.git
 tag(): user.kubectl
 tag(): user.tabs
 tag(): user.readline
+
+clear word: key(alt-backspace)
+tab previous: key(cmd-shift-[)
+tab next: key(cmd-shift-])
+
+history: key(ctrl-r)
+files: key(ctrl-t)
+(vim | vin) mode: key(cmd-shift-c)

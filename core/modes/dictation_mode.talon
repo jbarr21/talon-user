@@ -30,6 +30,7 @@ go line start: edit.line_start()
 go line end: edit.line_end()
 
 # Selection
+select all that: key(cmd-a)
 select left <number_small> (word | words):
     edit.extend_word_left()
     repeat(number_small - 1)
@@ -67,6 +68,9 @@ formatted <user.format_text>: user.dictation_insert_raw(format_text)
 nope that | scratch that: user.clear_last_phrase()
 (nope | scratch) selection: edit.delete()
 select that: user.select_last_phrase()
+scratch all that:
+    key(cmd-a)
+    key(backspace)
 spell that <user.letters>: user.dictation_insert(letters)
 spell that <user.formatters> <user.letters>:
     result = user.formatted_text(letters, formatters)
