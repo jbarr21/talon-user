@@ -88,6 +88,20 @@ def every_word(word_func):
     return lambda i, word, _: word_func(word)
 
 
+def spongebob(i, word):
+    capitalize = i % 2 == 0
+    formatted_string = ''
+
+    for char in word:
+        if not char.isalpha():
+            formatted_string += char
+        else:
+            formatted_string += char.upper() if capitalize else char.lower()
+            capitalize = not capitalize
+
+    return formatted_string
+
+
 formatters_dict = {
     "NOOP": (SEP, lambda i, word, _: word),
     "DOUBLE_UNDERSCORE": (NOSEP, first_vs_rest(lambda w: "__%s__" % w)),
@@ -113,6 +127,7 @@ formatters_dict = {
     "DOT_SEPARATED": words_with_joiner("."),
     "DOT_SNAKE": (NOSEP, lambda i, word, _: "." + word if i == 0 else "_" + word),
     "SLASH_SEPARATED": (NOSEP, every_word(lambda w: "/" + w)),
+    "SPONGEBOB": (SEP, lambda i, word, _: spongebob(i, word)),
     "CAPITALIZE_FIRST_WORD": (SEP, first_vs_rest(lambda w: w.capitalize())),
     "CAPITALIZE_ALL_WORDS": (
         SEP,
@@ -137,6 +152,7 @@ formatters_words = {
     "slasher": formatters_dict["SLASH_SEPARATED"],
     "smash": formatters_dict["NO_SPACES"],
     "snake": formatters_dict["SNAKE_CASE"],
+    "spongebob": formatters_dict["SPONGEBOB"],
     "string": formatters_dict["SINGLE_QUOTED_STRING"],
     "title": formatters_dict["CAPITALIZE_ALL_WORDS"],
 }
