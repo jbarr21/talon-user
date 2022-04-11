@@ -8,6 +8,8 @@ workspace <number>: key("cmd-{number}")
 # Channel
 (slack | lack) [channel] info: key(cmd-shift-i)
 # Navigation
+(slack | lack) [all] unread: key(cmd-shift-a)
+(slack | lack) jump: key(cmd-k)
 focus (move | next): key(ctrl-`)
 (section | zone) [next]: key(f6)
 (section | zone) (previous | last): key(shift-f6)

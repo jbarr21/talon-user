@@ -1,7 +1,7 @@
 os: mac
 user.running: vimac
 -
-show links: key(ctrl-f)
+[show] links: key(ctrl-alt-shift-cmd-f)
 click right on <user.letter> <user.letter>:
 	key('shift-{letter_1} shift-{letter_2}')
 click double on <user.letter> <user.letter>:
