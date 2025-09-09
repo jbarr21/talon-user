@@ -3,8 +3,11 @@ os: mac
 -
 
 alt: alt
+alt: alter
 control: ctrl
+troll: ctrl
 shift: shift
+sky: shift
 super: cmd
 command: cmd
 option: alt
