@@ -155,6 +155,24 @@ class CapitalizeFormatter(Formatter):
         return unformat_upper(text)
 
 
+class SpongebobFormatter(Formatter):
+    def format(self, text: str) -> str:
+        capitalize = i % 2 == 0
+        formatted_string = ''
+
+        for char in text:
+            if not char.isalpha():
+                formatted_string += char
+            else:
+                formatted_string += char.upper() if capitalize else char.lower()
+                capitalize = not capitalize
+
+        return formatted_string
+
+    def unformat(self, text: str) -> str:
+        return text
+
+
 class SentenceFormatter(Formatter):
     def format(self, text: str) -> str:
         """Capitalize first word if it's already all lower case"""
@@ -220,6 +238,7 @@ def de_camel(text: str) -> str:
 
 formatter_list = [
     CustomFormatter("NOOP", lambda text: text),
+    SpongebobFormatter("SPONGEBOB"),
     CustomFormatter("TRAILING_SPACE", lambda text: f"{text} "),
     CustomFormatter("DOUBLE_QUOTED_STRING", lambda text: f'"{text}"'),
     CustomFormatter("SINGLE_QUOTED_STRING", lambda text: f"'{text}'"),

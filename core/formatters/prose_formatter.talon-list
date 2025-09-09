@@ -1,6 +1,8 @@
 list: user.prose_formatter
 -
+mock: SPONGEBOB
 say: NOOP
 speak: NOOP
 sentence: CAPITALIZE_FIRST_WORD
+spongebob: SPONGEBOB
 title: CAPITALIZE_ALL_WORDS
